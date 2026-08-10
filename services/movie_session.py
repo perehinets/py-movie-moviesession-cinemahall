@@ -1,4 +1,4 @@
-from datetime import datetime
+import datetime
 
 from db.models import MovieSession, Movie, CinemaHall
 
@@ -14,7 +14,7 @@ def create_movie_session(movie_show_time: datetime,
     )
 
 
-def get_movies_sessions(session_date: datetime = None) -> MovieSession:
+def get_movies_sessions(session_date: datetime.datetime = None) -> MovieSession:
     queryset = MovieSession.objects.all()
     if session_date:
         return queryset.filter(show_time__date=session_date)
